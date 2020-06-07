@@ -2,10 +2,10 @@ import pandas as pd
 import csv
 
 class PortfolioManager:
-    def addItem(self, name, isin, symbol, share, category):
+    def addItem(self, name, isin, symbol, numShares, category):
         with open('portfolio.csv', 'a', newline='') as f:
             newFileWriter = csv.writer(f)
-            newFileWriter.writerow([name, isin, symbol, share, category])
+            newFileWriter.writerow([name, isin, symbol, numShares, category])
         self.readLocalCSV()
         print(self.df.head())
 
